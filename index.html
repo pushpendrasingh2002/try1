@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Direct UPI Payment Demo</title>
+    <style>
+        .button{
+            height: 100px;
+            width: 100px;
+            color: blue;
+        }
+        .div{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="div">
+
+        <button class="button" onclick="openPhonePe()">Pay with PhonePe</button>
+
+    </div>
+    
+
+    <script>
+        function openPhonePe() {
+            var upiID = "abhipayasi@ybl"; // Replace with your UPI ID
+
+            // Construct the URI to open PhonePe without specifying amount
+            var uri = "upi://pay?pa=" + encodeURIComponent(upiID);
+
+            // Try to open the PhonePe app
+            window.location.href = uri;
+        }
+    </script>
+</body>
+</html>
